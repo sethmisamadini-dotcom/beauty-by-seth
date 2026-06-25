@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty By Seth | Quality Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-pink: #d39892;
+            --light-beige: #f3e3cf;
+            --off-white: #f9f6f2;
+            --text-brown: #8b6e5a;
+            --footer-bg: #ae7370; /* Matches your specific footer tone */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background-color: #fff; }
+
+        /* --- NAVIGATION --- */
+        header { position: absolute; top: 0; width: 100%; padding: 25px 5%; z-index: 1000; }
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(12px);
+            padding: 15px 45px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .logo { font-weight: 600; letter-spacing: 1px; color: white; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.85rem; font-weight: 400; }
+
+        /* --- HERO SECTION --- */
+        .hero { display: flex; height: 100vh; overflow: hidden; }
+        .hero-left { flex: 1.2; background: var(--primary-pink); display: flex; flex-direction: column; justify-content: center; padding: 0 10%; color: white; }
+        .hero-left h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; line-height: 1.1; margin-bottom: 35px; font-weight: 400; }
+        .shop-btn { background: transparent; border: 1px solid white; color: white; padding: 12px 30px; font-size: 0.75rem; letter-spacing: 1px; cursor: pointer; width: fit-content; }
+        .hero-right { flex: 1; }
+        .hero-right img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* --- SERVICES / INFO --- */
+        .services-section { background-color: var(--light-beige); padding: 60px 8%; display: flex; justify-content: center; gap: 40px; }
+        .service-box { flex: 1; text-align: center; border-right: 1px solid #4a4a4a; padding: 0 20px; }
+        .service-box:last-child { border-right: none; }
+        .service-box i { font-size: 2.2rem; margin-bottom: 15px; color: #333; }
+        .service-box p { font-size: 0.8rem; font-weight: 500; color: #4a4a4a; line-height: 1.4; }
+
+        /* --- PRODUCT GRIDS --- */
+        .product-section { padding: 80px 8%; text-align: center; background-color: #e4d5d3; }
+        .product-section h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--text-brown); margin-bottom: 50px; font-weight: 400; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .card { text-align: center; }
+        .card .img-p { background-color: #d1c1bf; aspect-ratio: 1/1; margin-bottom: 15px; border-radius: 2px; }
+        .card h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--text-brown); }
+        .card span { font-size: 0.7rem; text-transform: uppercase; color: #777; letter-spacing: 1px; }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials { background-color: var(--light-beige); padding: 80px 8%; text-align: center; }
+        .testimonials h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--text-brown); margin-bottom: 40px; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .test-card { background: #fdf8f4; padding: 35px; border-radius: 15px; text-align: left; }
+        .test-card p { font-size: 0.9rem; font-style: italic; color: #555; margin-bottom: 15px; }
+        .test-card strong { font-size: 0.85rem; color: #333; }
+
+        /* --- FOOTER (Matches image_0f16f8.png) --- */
+        footer { background-color: var(--footer-bg); color: white; padding: 60px 8% 25px; position: relative; }
+        .footer-main { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; padding-bottom: 40px; }
+        .brand-info h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 10px; }
+        .brand-info p { font-size: 0.9rem; opacity: 0.9; max-width: 250px; line-height: 1.4; }
+        
+        .footer-links-group { display: flex; gap: 30px; font-size: 1.1rem; }
+        .footer-links-group a { color: white; text-decoration: none; }
+        
+        .footer-contact { text-align: right; font-size: 0.95rem; line-height: 1.8; }
+        
+        .social-icons { display: flex; gap: 15px; margin-top: 25px; }
+        .social-icons a { 
+            font-size: 1.8rem; color: white; transition: opacity 0.3s;
+        }
+        .social-icons .fa-facebook { color: #1877F2; }
+        .social-icons .fa-whatsapp { color: #25D366; }
+        .social-icons .fa-instagram { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .social-icons .fa-tiktok { color: #000; background: #fff; border-radius: 4px; padding: 2px; font-size: 1.4rem; }
+
+        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; font-size: 0.85rem; opacity: 0.9; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero, .services-section { flex-direction: column; }
+            .hero-right { height: 50vh; }
+            .service-box { border-right: none; border-bottom: 1px solid #4a4a4a; padding: 20px 0; }
+            .footer-main { flex-direction: column; text-align: center; align-items: center; }
+            .footer-contact { text-align: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">BEAUTY BY SETH</div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Our Trust</a></li>
+                <li><a href="#">Feedbacks</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Quality products<br>made with love.<br>That's what you get<br>from us.</h1>
+            <button class="shop-btn">SHOP NOW</button>
+        </div>
+        <div class="hero-right"><img src="model-hero.jpg" alt="Beauty"></div>
+    </section>
+
+    <section class="services-section">
+        <div class="service-box"><i class="fa-solid fa-headset"></i><p>24x7 Service<br>Dedicated Team to Attend Customer Inquiries</p></div>
+        <div class="service-box"><i class="fa-solid fa-truck-fast"></i><p>Island Wide Delivery<br>Maximum 3-4 Days Delivery</p></div>
+        <div class="service-box"><i class="fa-solid fa-tags"></i><p>Exclusive Discounts<br>for Customers</p></div>
+    </section>
+
+    <section class="product-section">
+        <h2>The Foundations</h2>
+        <div class="grid">
+            <div class="card"><span>Back to Basics</span><h4>Basic Cleaning</h4><div class="img-p"></div></div>
+            <div class="card"><span>Build Renew</span><h4>Mandelic Acid Peel</h4><div class="img-p"></div></div>
+            <div class="card"><span>Back to Basics</span><h4>Glycolic Acid Peel</h4><div class="img-p"></div></div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Where Beauty Meets Trust</h2>
+        <div class="test-grid">
+            <div class="test-card"><p>"I've been a long-time customer and always satisfied. High-quality products..."</p><strong>- Nisanki Vithana</strong></div>
+            <div class="test-card"><p>"Great experience shopping with us. Ordering was easy, delivery was on time..."</p><strong>- Sandaru Marasinghe</strong></div>
+            <div class="test-card"><p>"Received my order within two days. Great quality products..."</p><strong>- Iresha Samarathunga</strong></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-main">
+            <div class="brand-info">
+                <h3>Beauty By Seth</h3>
+                <p>Enhancing your beauty with elegance and care.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <a href="#">Home</a>
+                <a href="about.html">About</a>
+                <a href="#">Products</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="footer-contact">
+                <p>Email: your@email.com</p>
+                <p>Instagram | Facebook</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Beauty By Seth. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedbacks | Beauty By Seth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-muted-pink: #c29591;
+            --bg-sand: #f3e3cf;
+            --footer-bg: #ae7370;
+            --text-brown: #8b6e5a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; }
+
+        /* --- NAVIGATION --- */
+        header { width: 100%; padding: 30px 5%; background-color: var(--bg-muted-pink); }
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(15px);
+            padding: 12px 45px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .logo { font-weight: 600; letter-spacing: 2px; color: white; text-transform: uppercase; font-size: 0.9rem; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.85rem; }
+
+        /* --- FEEDBACK FORM SECTION --- */
+        .feedback-hero { 
+            background-color: var(--bg-muted-pink); 
+            padding: 40px 8% 80px; 
+            text-align: center; 
+            color: white; 
+            position: relative;
+        }
+        .feedback-hero p.intro-text { font-size: 0.85rem; max-width: 600px; margin: 0 auto 40px; opacity: 0.9; }
+
+        .feedback-card {
+            background: linear-gradient(135deg, #f9a8d4 0%, #fae8ff 50%, #fef08a 100%);
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: #2d3748;
+        }
+        .feedback-card h2 { font-size: 1.8rem; margin-bottom: 10px; color: #1a202c; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .feedback-card p { font-size: 0.85rem; margin-bottom: 20px; color: #4a5568; }
+        
+        textarea {
+            width: 100%;
+            height: 120px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.5);
+            resize: none;
+        }
+        .submit-btn {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            border: none;
+            padding: 12px 40px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .submit-btn:hover { background-color: #cbd5e0; }
+
+        /* --- TRUST / BENEFITS SECTION --- */
+        .trust-benefits { background-color: var(--bg-sand); padding: 80px 8%; display: flex; justify-content: center; gap: 40px; }
+        .benefit-item { flex: 1; text-align: center; border-left: 1px solid rgba(0,0,0,0.1); padding-left: 20px; }
+        .benefit-item:first-child { border-left: none; }
+        .benefit-item i { font-size: 2rem; color: #333; margin-bottom: 15px; display: block; }
+        .benefit-item h3 { font-size: 0.8rem; font-weight: 600; color: #444; margin-bottom: 5px; text-transform: uppercase; }
+        .benefit-item p { font-size: 0.8rem; color: #666; }
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--footer-bg); color: white; padding: 60px 8% 25px; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+        .footer-left h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 10px; }
+        .social-icons { display: flex; gap: 12px; margin-top: 20px; }
+        .social-icons a { width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; text-decoration: none; font-size: 1.2rem; }
+        .fa-facebook { background-color: #1877F2; }
+        .fa-whatsapp { background-color: #25D366; }
+        .fa-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .fa-tiktok { background-color: #000; }
+
+        .footer-right { text-align: right; font-size: 0.9rem; line-height: 1.8; }
+        .copyright { text-align: center; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .trust-benefits { flex-direction: column; gap: 40px; }
+            .benefit-item { border-left: none; padding-left: 0; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-right { text-align: center; }
+            .social-icons { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">BEAUTY BY SETH</div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="#">Our Trust</a></li>
+                <li><a href="feedbacks.html">Feedbacks</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="feedback-hero">
+        <p class="intro-text">I'm the biggest user of our products. I won't put anything harmful on my skin and I also don't try to put any harmful or out of fashion jwelaries, so I can assure you that only the purest products through our page.</p>
+        
+        <div class="feedback-card">
+            <h2>Share your feedback</h2>
+            <p>Thanks for attending! What were your key takeaways?</p>
+            <form>
+                <textarea placeholder="Write your thoughts here..."></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <p style="font-size: 0.65rem; margin-top: 15px; opacity: 0.7;">We couldn't load the form</p>
+        </div>
+    </section>
+
+    <section class="trust-benefits">
+        <div class="benefit-item">
+            <i class="fas fa-headset"></i>
+            <h3>24x7 Service</h3>
+            <p>Dedicated Team to Attend Customer Inquiries</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>Island Wide Delivery</h3>
+            <p>Maximum 3-4 Days Delivery</p>
+        </div>
+        <div class="benefit-item">
+            <i class="fas fa-tags"></i>
+            <h3>Exclusive Discounts</h3>
+            <p>For Customers</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>Beauty By Seth</h2>
+                <p>Enhancing your beauty with elegance and care.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>Email: your@email.com</p>
+                <p>Instagram | Facebook</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Beauty By Seth. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
