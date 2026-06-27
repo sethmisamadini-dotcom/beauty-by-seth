@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products Selection | Beauty By Seth</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+:root{
+--primary-pink:#d39892;
+--bg-blush:#d39892;
+--bg-lavender:#e4d5d3;
+--text-brown:#8b6e5a;
+--footer-bg:#ae7370;
+--off-white:#f9f6f2;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+line-height:1.6;
+color:#333;
+}
+
+/* NAVIGATION */
+
+header{
+width:100%;
+padding:30px 5%;
+background-color:var(--bg-blush);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.2);
+backdrop-filter:blur(15px);
+padding:20px 40px;
+border-radius:50px;
+border:1px solid rgba(255,255,255,0.3);
+}
+
+.logo{
+font-weight:600;
+letter-spacing:2px;
+color:white;
+text-transform:uppercase;
+font-size:0.9rem;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:0.85rem;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+opacity:0.7;
+}
+
+/* PRODUCTS */
+
+.products-selection{
+background-color:var(--bg-blush);
+padding:40px 8% 80px;
+text-align:center;
+color:white;
+}
+
+.products-selection h1{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-bottom:50px;
+font-weight:400;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product-item img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:5px;
+}
+
+.product-item h2{
+font-family:'Playfair Display',serif;
+font-size:1.5rem;
+margin-top:20px;
+}
+
+.product-item p{
+font-size:0.85rem;
+opacity:0.8;
+margin-top:10px;
+max-width:80%;
+margin:auto;
+}
+.product-link{
+text-decoration:none;
+color:white;
+display:block;
+}
+
+.product-item{
+transition:0.3s;
+cursor:pointer;
+}
+
+.product-item:hover{
+transform:translateY(-8px);
+}
+
+/* UPCOMING */
+
+.upcoming{
+background-color:var(--bg-lavender);
+padding:80px 8%;
+text-align:center;
+}
+
+.upcoming h2{
+font-family:'Playfair Display',serif;
+color:var(--text-brown);
+font-size:2.2rem;
+margin-bottom:50px;
+}
+
+.upcoming-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
+
+.upcoming-img-container{
+width:100%;
+aspect-ratio:1/1;
+overflow:hidden;
+border-radius:5px;
+margin-bottom:20px;
+}
+
+.upcoming-img-container img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.upcoming-label{
+background:white;
+padding:15px;
+width:90%;
+margin:auto;
+box-shadow:0 5px 10px rgba(0,0,0,0.05);
+}
+
+.upcoming-label span{
+display:block;
+font-size:0.65rem;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#888;
+}
+
+.upcoming-label h3{
+font-family:'Playfair Display',serif;
+font-size:0.9rem;
+margin-top:8px;
+}
+
+/* FEATURED PRODUCTS */
+
+.featured{
+background:var(--off-white);
+padding:80px 8%;
+text-align:center;
+}
+
+.featured h2{
+font-family:'Playfair Display',serif;
+color:var(--text-brown);
+font-size:2.2rem;
+margin-bottom:50px;
+}
+
+.featured-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.feature-card{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.feature-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:5px;
+}
+
+.feature-card h3{
+margin-top:15px;
+color:var(--text-brown);
+}
+
+/* WHY US */
+
+.why-us{
+background:var(--bg-blush);
+padding:80px 8%;
+text-align:center;
+color:white;
+}
+
+.why-us h2{
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+margin-bottom:50px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.why-box{
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:10px;
+}
+
+.why-box i{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+/* REVIEWS */
+
+.reviews{
+background:var(--bg-lavender);
+padding:80px 8%;
+text-align:center;
+}
+
+.reviews h2{
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+color:var(--text-brown);
+margin-bottom:50px;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.review-box{
+background:white;
+padding:30px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.review-box h4{
+margin-top:15px;
+color:var(--text-brown);
+}
+
+/* FOOTER */
+
+footer{
+background-color:var(--footer-bg);
+color:white;
+padding:60px 8% 25px;
+}
+
+.footer-content{
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-left h2{
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+}
+
+.social-icons{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.social-icons a{
+width:35px;
+height:35px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+color:white;
+text-decoration:none;
+}
+
+.fa-facebook{background:#1877F2;}
+.fa-whatsapp{background:#25D366;}
+.fa-instagram{
+background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
+}
+.fa-tiktok{background:black;}
+
+.footer-center{
+display:flex;
+gap:20px;
+}
+
+.footer-center a{
+color:white;
+text-decoration:none;
+}
+
+.footer-right{
+text-align:right;
+}
+
+.copyright{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.2);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.upcoming-grid,
+.featured-grid,
+.why-grid,
+.review-grid{
+grid-template-columns:1fr;
+}
+
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+
+.footer-center,
+.social-icons{
+justify-content:center;
+}
+
+.footer-right{
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">BEAUTY BY SETH</div>
+
+<ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="jewelry.html">Jewelry</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="feedbacks.html">Feedbacks</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="products-selection">
+
+<h1>Products Selection</h1>
+
+<div class="product-grid">
+
+<div class="product-item">
+<a href="jewelry.html#essential-oils">
+    <img src="image/lavender-oil.jpg">
+</a>
+<h2>Essential Oils</h2>
+<p>Relax and unwind with our wide variety of essential oils.</p>
+</div>
+
+<a href="jewelry.html" class="product-link">
+
+<div class="product-item">
+<img src="image/jewelry.jpg">
+<h2>Stainless Jewelry</h2>
+<p>Keep your personality with elegant beauty.</p>
+</div>
+
+</a>
+
+<div class="product-item">
+<a href="jewelry.html#cosmetics">
+    <img src="image/cosmetics.jpg" alt="Cosmetics">
+</a>
+<h2>Cosmetics</h2>
+<p>Let our products shine your outlook.</p>
+</div>
+
+</a>
+
+</section>
+
+
+<section class="upcoming">
+
+<h2>Upcoming Collection</h2>
+
+<div class="upcoming-grid">
+
+<div>
+<div class="upcoming-img-container">
+<img src="image/pendantnew.jpg">
+</div>
+
+<div class="upcoming-label">
+<span>Custom Pendant</span>
+<h3>Floating Heart</h3>
+</div>
+</div>
+
+<div>
+<div class="upcoming-img-container">
+<img src="image/earringsnew.jpg">
+</div>
+
+<div class="upcoming-label">
+<span>Custom Earrings</span>
+<h3>Three Studded Gems</h3>
+</div>
+</div>
+
+<div>
+<div class="upcoming-img-container">
+<img src="image/braceletnew.jpg">
+</div>
+
+<div class="upcoming-label">
+<span>Charm Bracelet</span>
+<h3>Gold / Silver Beaded</h3>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="featured">
+
+<h2>Featured Products</h2>
+
+<div class="featured-grid">
+
+<div class="feature-card">
+
+<img src="image/featured1.jpg">
+<h3>Luxury Perfume</h3>
+<p>Long lasting floral fragrance.</p>
+</div>
+
+<div class="feature-card">
+<img src="image/featured2.jpg">
+<h3>Skin Care Set</h3>
+<p>Glow naturally with premium skincare.</p>
+</div>
+
+<div class="feature-card">
+<img src="image/featured3.jpg">
+<h3>Premium Jewelry</h3>
+<p>Elegant accessories for every occasion.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="why-us">
+
+<h2>Why Choose Beauty By Seth</h2>
+
+<div class="why-grid">
+
+<div class="why-box">
+<i class="fas fa-gem"></i>
+<h3>Premium Quality</h3>
+<p>Only quality products selected for customers.</p>
+</div>
+
+<div class="why-box">
+<i class="fas fa-heart"></i>
+<h3>Customer Satisfaction</h3>
+<p>Your confidence matters to us.</p>
+</div>
+
+<div class="why-box">
+<i class="fas fa-truck"></i>
+<h3>Fast Delivery</h3>
+<p>Quick and secure delivery service.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review-grid">
+
+<div class="review-box">
+<p>"Amazing quality and beautiful packaging."</p>
+<h4>- Sarah</h4>
+</div>
+
+<div class="review-box">
+<p>"The jewelry collection is elegant and stylish."</p>
+<h4>- Amanda</h4>
+</div>
+
+<div class="review-box">
+<p>"Love the products and customer service."</p>
+<h4>- Jessica</h4>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-left">
+
+<h2>Beauty By Seth</h2>
+
+<p>Enhancing your beauty with elegance and care.</p>
+
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+</div>
+
+</div>
+
+<div>
+<p>Email: your@email.com</p>
+<p>Instagram | Facebook</p>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Beauty By Seth. All Rights Reserved.
+</div>
+
+</footer>
+</body>
+</html>

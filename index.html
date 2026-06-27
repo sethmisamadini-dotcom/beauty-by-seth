@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty By Seth | Brand Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+
+:root{
+--primary-pink:#d39892;
+--soft-pink:#e8d5d1;
+--cream:#f3e3cf;
+--text-brown:#8b6e5a;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#fff;
+line-height:1.6;
+}
+
+/* HEADER */
+header{
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+padding:20px 5%;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.2);
+backdrop-filter: blur(10px);
+padding:15px 35px;
+border-radius:50px;
+}
+
+.logo{
+color:white;
+font-weight:600;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+list-style:none;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+/* HERO */
+.hero{
+display:flex;
+height:100vh;
+}
+
+.hero-left{
+flex:1;
+background:var(--primary-pink);
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:0 8%;
+color:white;
+}
+
+.hero-left h1{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+}
+.hero-subtitle{
+margin-top:20px;
+font-size:1.05rem;
+line-height:1.8;
+max-width:500px;
+opacity:0.95;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:25px;
+margin-right:12px;
+padding:12px 28px;
+background:white;
+color:var(--primary-pink);
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+transform:translateY(-3px);
+}
+
+.hero-btn-outline{
+display:inline-block;
+margin-top:25px;
+padding:12px 28px;
+border:2px solid white;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+transition:0.3s;
+}
+
+.hero-btn-outline:hover{
+background:white;
+color:var(--primary-pink);
+}
+
+.hero-right{
+flex:1;
+overflow:hidden;
+}
+
+.hero-right img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* ABOUT */
+.about-section{
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:url("image/YOUR_IMAGE.jpg") center/cover no-repeat;
+background-attachment:fixed;
+}
+
+.about-section::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.4);
+}
+
+.about-content{
+position:relative;
+z-index:2;
+text-align:center;
+max-width:700px;
+color:white;
+padding:20px;
+}
+
+.about-content h2{
+font-size:2.5rem;
+font-family:'Playfair Display',serif;
+margin-bottom:15px;
+}
+
+.trust-text{
+margin-top:25px;
+font-size:1.5rem;
+}
+
+/* SERVICES */
+.services-section{
+padding:80px 8%;
+text-align:center;
+}
+
+.service-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.service-card{
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.service-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.service-card h3{
+color:#8b6e5a;
+font-family:'Playfair Display',serif;
+margin-top:15px;
+}
+
+.service-card p{
+padding:10px 15px;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+}
+
+/* PRODUCTS */
+.products-section{
+padding:80px 8%;
+background:var(--soft-pink);
+text-align:center;
+}
+
+.product-showcase{
+display:flex;
+gap:30px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.product-main{
+flex:1;
+min-width:300px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+}
+
+.product-main img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
+
+.product-info{
+padding:20px;
+text-align:left;
+}
+
+.product-info button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:var(--primary-pink);
+color:white;
+cursor:pointer;
+}
+
+.product-side{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.mini-product{
+display:flex;
+gap:15px;
+align-items:center;
+background:white;
+padding:10px;
+border-radius:15px;
+box-shadow:0 10px 20px rgba(0,0,0,0.05);
+cursor:pointer;
+transition:0.3s;
+}
+
+.mini-product img{
+width:70px;
+height:70px;
+border-radius:10px;
+object-fit:cover;
+}
+
+.mini-product.active{
+outline:2px solid var(--primary-pink);
+transform:scale(1.02);
+}
+
+/* RESULTS */
+.results-section{
+padding:80px 8%;
+background:var(--cream);
+text-align:center;
+}
+
+.before-after{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.ba-card{
+position:relative;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.ba-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.ba-text{
+position:absolute;
+bottom:0;
+width:100%;
+padding:15px;
+background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);
+color:white;
+font-weight:600;
+}
+
+.ba-card:hover{
+transform:scale(1.03);
+}
+
+/* 🌸 CTA (BRAND-MATCHED LIGHT LUXURY) */
+.cta-section{
+height:70vh;
+background:url("image/cta-bg.jpg") center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+/* FIXED BRAND COLOR OVERLAY */
+.cta-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(
+135deg,
+rgba(211,152,146,0.65),
+rgba(243,227,207,0.55)
+);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* GLASS BOX */
+.cta-box{
+max-width:600px;
+padding:40px;
+background:rgba(255,255,255,0.15);
+backdrop-filter: blur(15px);
+border-radius:20px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.cta-box h2{
+font-size:2.2rem;
+font-family:'Playfair Display',serif;
+margin-bottom:10px;
+}
+
+.cta-box p{
+margin:10px 0;
+opacity:0.9;
+}
+
+.cta-sub{
+font-size:0.95rem;
+opacity:0.8;
+}
+
+.cta-form{
+margin-top:20px;
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.cta-form input{
+padding:12px;
+width:250px;
+border:none;
+border-radius:25px;
+outline:none;
+}
+
+.cta-form button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:var(--primary-pink);
+color:white;
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:#b07b78;
+color:white;
+padding:80px 8% 25px;
+}
+
+.footer-content{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.footer-left h2{
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+margin-bottom:15px;
+}
+
+.footer-left p{
+font-size:1.1rem;
+margin-bottom:30px;
+}
+
+.footer-right{
+text-align:right;
+font-size:1.1rem;
+line-height:2;
+}
+
+.social-icons{
+display:flex;
+gap:35px;
+margin-top:20px;
+}
+
+.social-icons a{
+color:white;
+font-size:1.8rem;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+transform:translateY(-5px);
+opacity:0.8;
+}
+
+.copyright{
+text-align:center;
+margin-top:60px;
+padding-top:25px;
+border-top:1px solid rgba(255,255,255,0.25);
+font-size:1rem;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+
+.footer-right{
+text-align:center;
+}
+
+.social-icons{
+justify-content:center;
+}
+
+}
+
+/* SCROLL */
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:all 0.9s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero{flex-direction:column;}
+.nav-links{display:none;}
+.about-section{background-attachment:scroll;}
+.product-showcase{flex-direction:column;}
+.cta-form{flex-direction:column;}
+.cta-form input{width:100%;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<nav>
+<div class="logo">BEAUTY BY SETH</div>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="jewelry.html">Jewelry</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="feedbacks.html">Feedbacks</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+</ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-left reveal">
+
+<h1>Beauty, Elegance & Confidence In Every Detail</h1>
+
+<p class="hero-subtitle">
+Discover premium skincare, cosmetics and jewelry crafted to inspire confidence and timeless beauty.
+</p>
+
+<a href="products.html" class="hero-btn">Shop Now</a>
+
+<a href="about.html" class="hero-btn-outline">Learn More</a>
+
+</div>
+
+<div class="hero-right">
+<img src="image/homepage.png">
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+<div class="about-content reveal">
+<h2>Our Brand Story</h2>
+<p>Beauty By Seth is dedicated to high-quality skincare and beauty products.</p>
+<h3 class="trust-text">Empowering Confidence Through Beauty</h3>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section reveal">
+<h2>Our Services</h2>
+
+<div class="service-cards">
+
+<div class="service-card">
+<img src="image/service1.jpg">
+<h3>Radiant Skincare</h3>
+<p>Glow-enhancing treatments for healthy skin.</p>
+</div>
+
+<div class="service-card">
+<img src="image/service2.jpg">
+<h3>Beauty Consultation</h3>
+<p>Personalized skincare advice for you.</p>
+</div>
+
+<div class="service-card">
+<img src="image/service3.jpg">
+<h3>Fast Delivery</h3>
+<p>Quick and safe delivery of products.</p>
+</div>
+
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section reveal">
+<h2>Featured Products</h2>
+
+<div class="product-showcase">
+
+<div class="product-main">
+<img id="mainImg" src="image/product1.jpg">
+<div class="product-info">
+<h3 id="mainTitle">Glow Cleanser</h3>
+<p id="mainDesc">Deep cleansing for fresh skin</p>
+<button>Shop Now</button>
+</div>
+</div>
+
+<div class="product-side">
+
+<div class="mini-product active" onclick="changeProduct(this)">
+<img src="image/product1.jpg" data-title="Glow Cleanser" data-desc="Deep cleansing for fresh skin">
+<div><h4>Glow Cleanser</h4></div>
+</div>
+
+<div class="mini-product" onclick="changeProduct(this)">
+<img src="image/product2.jpg" data-title="Hydra Serum" data-desc="Hydration boost">
+<div><h4>Hydra Serum</h4></div>
+</div>
+
+<div class="mini-product" onclick="changeProduct(this)">
+<img src="image/product3.jpg" data-title="Face Cream" data-desc="Soft glowing skin">
+<div><h4>Face Cream</h4></div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section reveal">
+<h2>Real Skin Results</h2>
+
+<div class="before-after">
+
+<div class="ba-card">
+<img src="image/before1.jpg">
+<div class="ba-text">Soft Glow Transformation</div>
+</div>
+
+<div class="ba-card">
+<img src="image/before2.jpg">
+<div class="ba-text">Clear Skin Journey</div>
+</div>
+
+<div class="ba-card">
+<img src="image/before3.jpg">
+<div class="ba-text">Natural Beauty Boost</div>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section reveal">
+<div class="cta-overlay">
+
+<div class="cta-box">
+<h2>Reveal Your Natural Glow</h2>
+<p>Join thousands of women building skincare confidence.</p>
+<p class="cta-sub">Get exclusive beauty tips & offers ✨</p>
+
+<div class="cta-form">
+<input type="email" placeholder="Enter your email">
+<button>Join Now</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-content">
+
+<div class="footer-left">
+
+<h2>Beauty By Seth</h2>
+
+<p>Enhancing your beauty with elegance and care.</p>
+
+<div class="social-icons">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+</div>
+
+</div>
+
+<div class="footer-right">
+
+<p>Email: your@email.com</p>
+<p>Instagram | Facebook</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Beauty By Seth. All Rights Reserved.
+</div>
+
+</footer>
+<script>
+
+function changeProduct(el){
+
+document.querySelectorAll(".mini-product").forEach(i=>{
+i.classList.remove("active");
+});
+
+el.classList.add("active");
+
+document.getElementById("mainImg").src =
+el.querySelector("img").src;
+
+document.getElementById("mainTitle").innerText =
+el.querySelector("img").dataset.title;
+
+document.getElementById("mainDesc").innerText =
+el.querySelector("img").dataset.desc;
+}
+
+window.addEventListener("scroll", function(){
+document.querySelectorAll(".reveal").forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add("active");
+}
+});
+});
+
+</script>
+
+</body>
+</html>
