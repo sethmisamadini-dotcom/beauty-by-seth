@@ -34,10 +34,15 @@ color:#333;
 
 /* NAVIGATION */
 
+/* NAVIGATION */
+
 header{
+position:fixed;
 width:100%;
-padding:30px 5%;
-background-color:var(--bg-blush);
+top:0;
+left:0;
+z-index:1000;
+padding:20px 5%;
 }
 
 nav{
@@ -45,37 +50,31 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(255,255,255,0.2);
-backdrop-filter:blur(15px);
-padding:20px 40px;
+backdrop-filter:blur(10px);
+padding:15px 35px;
 border-radius:50px;
-border:1px solid rgba(255,255,255,0.3);
 }
 
 .logo{
-font-weight:600;
-letter-spacing:2px;
 color:white;
-text-transform:uppercase;
-font-size:0.9rem;
+font-weight:600;
 }
 
 .nav-links{
 display:flex;
+gap:20px;
 list-style:none;
-gap:25px;
 }
 
 .nav-links a{
-text-decoration:none;
 color:white;
-font-size:0.85rem;
+text-decoration:none;
 transition:0.3s;
 }
 
 .nav-links a:hover{
 opacity:0.7;
 }
-
 /* PRODUCTS */
 
 .products-selection{
