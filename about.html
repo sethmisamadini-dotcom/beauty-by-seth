@@ -440,7 +440,65 @@ font-size:1rem;
 
 /* Mobile */
 
+/* Mobile Sidebar Menu */
+
+.menu-btn{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:28px;
+cursor:pointer;
+}
+
+
 @media(max-width:768px){
+
+.menu-btn{
+display:block;
+}
+
+
+.nav-links{
+
+position:fixed;
+top:0;
+right:-280px;
+
+width:280px;
+height:100vh;
+
+background:#24142c;
+
+display:flex;
+flex-direction:column;
+
+padding:80px 30px;
+
+gap:25px;
+
+transition:0.4s;
+
+}
+
+
+.nav-links.active{
+right:0;
+}
+
+
+.nav-links a{
+color:white;
+font-size:18px;
+}
+
+
+nav{
+padding:15px 20px;
+}
+
+
+
 
 .footer-content{
 flex-direction:column;
@@ -523,13 +581,31 @@ text-align:center;
 
 </style>
 </head>
+<script>
+
+function openMenu(){
+
+document.getElementById("sideMenu")
+.classList.toggle("active");
+
+}
+
+</script>
 
 <body>
 
 <header>
+
 <nav>
+
 <div class="logo">BEAUTY BY SETH</div>
-<ul class="nav-links">
+
+<button class="menu-btn" onclick="openMenu()">
+☰
+</button>
+
+<ul class="nav-links" id="sideMenu">
+
 <li><a href="index.html">Home</a></li>
 <li><a href="about.html">About</a></li>
 <li><a href="products.html">Products</a></li>
@@ -537,8 +613,11 @@ text-align:center;
 <li><a href="news.html">News</a></li>
 <li><a href="feedbacks.html">Feedbacks</a></li>
 <li><a href="contact.html">Contact Us</a></li>
+
 </ul>
+
 </nav>
+
 </header>
 
 <!-- HERO -->
