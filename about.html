@@ -468,9 +468,27 @@ to{opacity:1;transform:translateY(0);}
 
 @media(max-width:768px){
 
-.nav-links{display:none;}
+.nav-links{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
 
-.hero-content h1{font-size:3rem;}
+.nav-links a{
+    font-size:11px;
+}
+
+nav{
+    padding:15px 20px;
+}
+
+.logo{
+    font-size:12px;
+}
+
+.hero-content h1{
+    font-size:3rem;
+}
 
 .story-container{
 flex-direction:column;
@@ -523,7 +541,7 @@ text-align:center;
 </section>
 
 <!-- STORY -->
-<section class="story-section" id="who-we-are"></section>
+<section class="story-section" id="who-we-are">
 
 <div class="story-container">
 
